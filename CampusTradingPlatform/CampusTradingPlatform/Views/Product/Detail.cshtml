@@ -1,0 +1,139 @@
+﻿
+
+@model Entity.ProductInfo
+
+@{
+    ViewData["Title"] = "商品详情";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>商品详情 - 校园交易平台</title>
+    <link href="//unpkg.com/layui@2.9.21/dist/css/layui.css" rel="stylesheet">
+    <style>
+        .image-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+            .thumbnail.active {
+                border-color: #1E9FFF;
+            }
+
+        #mainImage {
+            max-width: 600px;
+            max-height: 400px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: absolute; left: 20px; top: 20px;">
+        <button onclick="history.back()" class="layui-btn">返回</button>
+    </div>
+    <div class="layui-container" style="margin-top: 20px;">
+        <div class="layui-card">
+            <div class="layui-card-header layui-bg-blue">商品详情</div>
+            <div class="layui-card-body">
+                <!-- 主图展示 -->
+                <div class="layui-form-item">
+                    <img id="mainImage" src="@Model.PhotoUrl" alt="主图">
+                </div>
+
+                <!-- 多图缩略图横向滚动条 -->
+                <div class="image-gallery">
+                    @if (Model.ImagesUrl != null)
+                    {
+                        foreach (var imageUrl in Model.ImagesUrl)
+                        {
+                            <img class="thumbnail" src="@imageUrl" onclick="switchMainImage('@imageUrl')">
+                        }
+                    }
+                </div>
+
+                <!-- 商品信息 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" value="@Model.Name" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">价格</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" value="@Model.Price.ToString("C")" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品描述</label>
+                    <div class="layui-input-block">
+                        <textarea class="layui-textarea" readonly>@Model.Description</textarea>
+                    </div>
+                </div>
+                <div>
+                    <button class="layui-btn" onclick="addToCart(@Model.Id)">加入购物车</button>
+                    <button class="layui-btn layui-btn-danger"
+                            onclick="window.location.href='/Chat/Start?productId=@Model.Id'">
+                        立即购买
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 切换主图
+        function switchMainImage(url) {
+            document.getElementById('mainImage').src = url;
+            // 高亮当前缩略图
+            document.querySelectorAll('.thumbnail').forEach(img => {
+                img.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+    <script>
+        // 统一处理AJAX请求逻辑
+             async function addToCart(productId) {
+            try {
+                const response = await fetch(`/Cart/Add?productId=${productId}`, {
+                    method: 'POST'
+                });
+
+                const result = await response.json(); // 修改为JSON响应
+                if (result.success) {
+                    layer?.msg('添加成功', { icon: 1 });
+                    setTimeout(() => location.reload(), 800); // 确保页面数据更新
+                } else {
+                    layer?.msg(result.message || '操作失败', { icon: 2 });
+                }
+            } catch (e) {
+                layer?.msg('网络异常', { icon: 2 });
+            }
+        }
+
+        // 监听购物车更新事件（更新角标等）
+        document.addEventListener('cartUpdated', function() {
+            fetch('/cart/count')
+                .then(res => res.json())
+                .then(data => {
+                    const countEl = document.getElementById('cartCount');
+                    if (countEl) countEl.textContent = data.count;
+                });
+        });
+    </script>
+</body>
+</html>

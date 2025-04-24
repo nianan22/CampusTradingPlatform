@@ -1,0 +1,197 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Demo</title>
+    <link href="/layui-main/dist/css/layui.css" rel="stylesheet">
+    <script src="/js/axios.js"></script> <!-- 引入 axios.js 库 -->
+    <style>
+        body {
+            background-color: #f4f4f9; /* 背景颜色 */
+            background-image: url('/images/bg.jpg'); /* 背景图片 */
+            background-size: cover; /* 背景图片覆盖整个页面 */
+            background-position: center; /* 背景图片居中 */
+            background-repeat: no-repeat; /* 背景图片不重复 */
+            height: 100vh; /* 设置页面高度为视口高度 */
+            margin: 0; /* 去除默认的body边距 */
+            display: flex; /* 使用flex布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+        }
+
+        .demo-login-container {
+            width: 320px;
+            background-color: rgba(255, 255, 255, 0.9); /* 透明背景 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+        }
+
+        .demo-login-other .layui-icon {
+            position: relative;
+            display: inline-block;
+            margin: 0 2px;
+            top: 2px;
+            font-size: 26px;
+        }
+
+        .layui-form-item {
+            margin-bottom: 15px;
+        }
+
+            .layui-form-item:last-child {
+                margin-bottom: 0;
+            }
+
+        .layui-input-wrap {
+            position: relative;
+        }
+
+        .layui-input-prefix {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #999;
+        }
+
+        .layui-input {
+            padding-left: 35px; /* 为图标留出空间 */
+        }
+
+        .layui-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .layui-btn:hover {
+                background-color: #0056b3;
+            }
+
+        .demo-login-other {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+            .demo-login-other label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .demo-login-other a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .demo-login-other a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+    <!-- 返回首页按钮 -->
+    <button class="layui-btn layui-btn-primary" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 1000;" onclick="window.location.href='/home'">返回首页</button>
+
+    <form class="layui-form" id="loginForm" method="post" onsubmit="return false;">
+        <div class="demo-login-container">
+            <div class="layui-form-item">
+                <div class="layui-input-wrap">
+                    <div class="layui-input-prefix">
+                        <i class="layui-icon layui-icon-username"></i>
+                    </div>
+                    <input type="text" name="username" value="" lay-verify="required" placeholder="用户名" lay-reqtext="请填写用户名" autocomplete="off" class="layui-input" lay-affix="clear">
+                </div >
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-wrap">
+                    <div class="layui-input-prefix">
+                        <i class="layui-icon layui-icon-password"></i>
+                    </div>
+                    <input type="password" name="password" value="" lay-verify="required" placeholder="密   码" lay-reqtext="请填写密码" autocomplete="off" class="layui-input" lay-affix="eye">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-row">
+                    <div class="layui-col-xs7">
+                        <div class="layui-input-wrap">
+                            <div class="layui-input-prefix">
+                                <i class="layui-icon layui-icon-vercode"></i>
+                            </div>
+                            <input type="text" name="captcha" value="" lay-verify="required" placeholder="验证码" lay-reqtext="请填写验证码" autocomplete="off" class="layui-input" lay-affix="clear">
+                        </div>
+                    </div>
+                    <div class="layui-col-xs5">
+                        <div style="margin-left: 10px;">
+                            <img src="/login/CreateImageCode" onclick="this.src='/login/CreateImageCode?d='+new Date()" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <input type="checkbox" name="remember" lay-skin="primary" title="自动登录">
+                <a href="#forget" style="float: right; margin-top: 7px;">忘记密码？</a>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="demo-login">登录</button>
+            </div>
+            <div class="layui-form-item demo-login-other">
+                <label>社交账号登录</label>
+                <span style="padding: 0 21px 0 6px;">
+                    <a href="javascript:;"><i class="layui-icon layui-icon-login-qq" style="color: #3492ed;"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat" style="color: #4daf29;"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-login-weibo" style="color: #cf1900;"></i></a>
+                </span>
+                或 <a href="/Login/Regeist">注册帐号</a>
+            </div>
+        </div>
+    </form>
+
+    <script src="/layui-main/dist/layui.js"></script>
+    <script>
+        layui.use(function(){
+            var form = layui.form;
+            var layer = layui.layer;
+            // 提交事件
+            form.on('submit(demo-login)', function(data){
+                var field = data.field; // 获取表单字段值
+                console.log(field);
+                      var formData = new FormData(); // 创建 FormData 对象
+
+        // 将表单字段添加到 FormData 对象中
+        for (var key in field) {
+            formData.append(key, field[key]);
+        }
+                // 发送 POST 请求
+                axios.post('/Login/LoginUser', formData, {
+                    headers: {
+                       'Content-Type': 'multipart/form-data' // 设置请求头
+                    }
+                })
+                .then(function (response) {
+                    if(response.data.code===200)
+                    {
+                         window.location.href = "/home"
+                    }else{
+                        layer.msg(response.data.message);
+                    }
+                })
+                .catch(function (error) {
+                    layer.msg('登录失败: ' + error.response.data.message);
+                });
+
+                return false; // 阻止默认 form 跳转
+            });
+        });
+    </script>
+</body>
+</html>

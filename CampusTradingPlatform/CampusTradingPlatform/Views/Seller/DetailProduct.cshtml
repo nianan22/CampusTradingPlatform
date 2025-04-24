@@ -1,0 +1,97 @@
+﻿@model Entity.ProductInfo
+
+@{
+    ViewData["Title"] = "商品详情";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>商品详情 - 校园交易平台</title>
+    <link href="//unpkg.com/layui@2.9.21/dist/css/layui.css" rel="stylesheet">
+    <style>
+        .image-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .thumbnail {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+            .thumbnail.active {
+                border-color: #1E9FFF;
+            }
+
+        #mainImage {
+            max-width: 600px;
+            max-height: 400px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="layui-container" style="margin-top: 20px;">
+        <div class="layui-card">
+            <div class="layui-card-header layui-bg-blue">商品详情</div>
+            <div class="layui-card-body">
+                <!-- 主图展示 -->
+                <div class="layui-form-item">
+                    <img id="mainImage" src="@Model.PhotoUrl" alt="主图">
+                </div>
+
+                <!-- 多图缩略图横向滚动条 -->
+                <div class="image-gallery">
+                    @if (Model.ImagesUrl != null)
+                    {
+                        foreach (var imageUrl in Model.ImagesUrl)
+                        {
+                            <img class="thumbnail" src="@imageUrl" onclick="switchMainImage('@imageUrl')">
+                        }
+                    }
+                </div>
+
+                <!-- 商品信息 -->
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" value="@Model.Name" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">价格</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" value="@Model.Price.ToString("C")" readonly>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">商品描述</label>
+                    <div class="layui-input-block">
+                        <textarea class="layui-textarea" readonly>@Model.Description</textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 切换主图
+        function switchMainImage(url) {
+            document.getElementById('mainImage').src = url;
+            // 高亮当前缩略图
+            document.querySelectorAll('.thumbnail').forEach(img => {
+                img.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

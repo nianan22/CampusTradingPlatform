@@ -1,0 +1,114 @@
+﻿@* Views/Seller/AddProduct.cshtml *@
+@model Entity.ProductInfo
+
+@{
+    ViewData["Title"] = "发布新商品";
+    Layout = null; // 根据实际布局调整
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>发布商品 - 校园交易平台</title>
+    <link href="//unpkg.com/layui@2.9.21/dist/css/layui.css" rel="stylesheet">
+</head>
+<body>
+    <div class="layui-container" style="margin-top: 30px;">
+        <div class="layui-card">
+            <div class="layui-card-header layui-bg-blue">发布新商品</div>
+            <div class="layui-card-body">
+                <form class="layui-form" asp-action="AddProduct" method="post" enctype="multipart/form-data">
+                    <!-- 商品名称 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商品名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Name" class="layui-input" placeholder="请输入商品名称" lay-verify="required">
+                            <span asp-validation-for="Name" class="layui-font-red"></span>
+                        </div>
+                    </div>
+
+                    <!-- 商品描述 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商品描述</label>
+                        <div class="layui-input-block">
+                            <textarea asp-for="Description" class="layui-textarea" placeholder="请输入详细描述" rows="5" lay-verify="required"></textarea>
+                            <span asp-validation-for="Description" class="layui-font-red"></span>
+                        </div>
+                    </div>
+
+                    <!-- 商品类别 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商品类别</label>
+                        <div class="layui-input-block">
+                            <select asp-for="Category" class="layui-select" lay-verify="required">
+                                <option value="">请选择类别</option>
+                                <option value="服装">服装</option>
+                                <option value="书籍">书籍</option>
+                                <option value="食品">食品</option>
+                                <option value="电子产品">电子产品</option>
+                                <option value="交通工具">交通工具</option>
+                                <option value="其他">其他</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- 商品数量 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商品数量</label>
+                        <div class="layui-input-block">
+                            <input type="number" asp-for="Count" class="layui-input" placeholder="请输入库存数量" min="1" lay-verify="required|number">
+                        </div>
+                    </div>
+
+                    <!-- 主图上传 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">主图上传</label>
+                        <div class="layui-input-block">
+                            <input type="file" name="mainImage" class="layui-input" accept="image/*" lay-verify="required">
+                        </div>
+                    </div>
+
+                    <!-- 多图上传 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">多图上传</label>
+                        <div class="layui-input-block">
+                            <input type="file" name="detailImages" class="layui-input" accept="image/*" multiple>
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">价格</label>
+                        <div class="layui-input-block">
+                            <input type="number" asp-for="Price" class="layui-input" step="0.01" lay-verify="required">
+                            <span asp-validation-for="Price" class="layui-font-red"></span>
+                        </div>
+                    </div>
+
+                    <!-- 提交按钮 -->
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="formSubmit">立即发布</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="//unpkg.com/layui@2.9.21/dist/layui.js"></script>
+    <script>
+        layui.use(['form'], function(){
+            var form = layui.form;
+
+            // 表单验证
+            form.verify({
+                number: [
+                    /^[1-9]\d*$/,
+                    '数量必须为正整数'
+                ]
+            });
+        });
+    </script>
+</body>
+</html>

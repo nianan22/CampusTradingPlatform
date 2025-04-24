@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\layui-main\.gitee\ISSUE_TEMPLATE.zh-CN.md" />
+    <None Include="wwwroot\layui-main\.gitee\ISSUE_TEMPLATE\config.yml" />
+    <None Include="wwwroot\layui-main\.github\FUNDING.yml" />
+    <None Include="wwwroot\layui-main\.github\ISSUE_TEMPLATE\bug-feature.yml" />
+    <None Include="wwwroot\layui-main\.github\ISSUE_TEMPLATE\config.yml" />
+    <None Include="wwwroot\layui-main\.github\pull_request_template.md" />
+    <None Include="wwwroot\layui-main\.github\workflows\issue-close-require.yml" />
+    <None Include="wwwroot\layui-main\.github\workflows\issue-closed.yml" />
+    <None Include="wwwroot\layui-main\.github\workflows\issue-labeled.yml" />
+    <None Include="wwwroot\layui-main\.github\workflows\issue-opened.yml" />
+    <None Include="wwwroot\layui-main\.github\workflows\pr-preview.yml" />
+    <None Include="wwwroot\layui-main\.github\workflows\release-npm.yml" />
+    <None Include="wwwroot\layui-main\.github\workflows\release.yml" />
+    <None Include="wwwroot\layui-main\docs\.layui\detail\options.md" />
+    <None Include="wwwroot\layui-main\docs\.layui\examples\demo.md" />
+    <None Include="wwwroot\layui-main\docs\.layui\index.md" />
+  </ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Autofac" Version="8.2.0" />
+		<PackageReference Include="Autofac.Extensions.DependencyInjection" Version="10.0.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="7.0.20" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="9.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="System.Drawing.Common" Version="7.0.0" />
+		<PackageReference Include="NETCore.MailKit" Version="2.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Campus.IRepository\CTP.IRepository.csproj" />
+	  <ProjectReference Include="..\Common\Common.csproj" />
+	  <ProjectReference Include="..\CTP.IService\CTP.IService.csproj" />
+	  <ProjectReference Include="..\CTP.Repository\CTP.Repository.csproj" />
+	  <ProjectReference Include="..\CTP.Service\CTP.Service.csproj" />
+	  <ProjectReference Include="..\EntityFrameworkCore\EntityFrameworkCore.csproj" />
+	  <ProjectReference Include="..\Entity\Entity.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="wwwroot\uploads\" />
+	</ItemGroup>
+</Project>

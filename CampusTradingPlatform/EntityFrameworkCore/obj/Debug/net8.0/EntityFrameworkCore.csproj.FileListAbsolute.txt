@@ -1,0 +1,17 @@
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\bin\Debug\net8.0\EntityFrameworkCore.deps.json
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\bin\Debug\net8.0\EntityFrameworkCore.runtimeconfig.json
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\bin\Debug\net8.0\EntityFrameworkCore.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\bin\Debug\net8.0\EntityFrameworkCore.pdb
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFrameworkCore.csproj.AssemblyReference.cache
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFrameworkCore.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFrameworkCore.AssemblyInfoInputs.cache
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFrameworkCore.AssemblyInfo.cs
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFrameworkCore.csproj.CoreCompileInputs.cache
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFrameworkCore.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\refint\EntityFrameworkCore.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFrameworkCore.pdb
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFrameworkCore.genruntimeconfig.cache
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\ref\EntityFrameworkCore.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\bin\Debug\net8.0\Entity.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\bin\Debug\net8.0\Entity.pdb
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\EntityFrameworkCore\obj\Debug\net8.0\EntityFr.15BC9DF9.Up2Date

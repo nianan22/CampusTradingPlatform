@@ -1,0 +1,15 @@
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\bin\Debug\net8.0\CTP.IService.deps.json
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\bin\Debug\net8.0\CTP.IService.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\bin\Debug\net8.0\CTP.IService.pdb
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\bin\Debug\net8.0\Entity.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\bin\Debug\net8.0\Entity.pdb
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\CTP.IService.csproj.AssemblyReference.cache
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\CTP.IService.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\CTP.IService.AssemblyInfoInputs.cache
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\CTP.IService.AssemblyInfo.cs
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\CTP.IService.csproj.CoreCompileInputs.cache
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\CTP.ISer.F9326971.Up2Date
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\CTP.IService.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\refint\CTP.IService.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\CTP.IService.pdb
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.IService\obj\Debug\net8.0\ref\CTP.IService.dll

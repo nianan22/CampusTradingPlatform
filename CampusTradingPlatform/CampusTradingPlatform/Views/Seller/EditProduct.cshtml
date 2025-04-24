@@ -1,0 +1,64 @@
+﻿@model Entity.ProductInfo
+
+@{
+    ViewData["Title"] = "编辑商品";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>编辑商品 - 校园交易平台</title>
+    <link href="//unpkg.com/layui@2.9.21/dist/css/layui.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f9; /* 背景颜色 */
+            background-image: url('/images/bg.jpg'); /* 背景图片 */
+            background-size: cover; /* 背景图片覆盖整个页面 */
+            background-position: center; /* 背景图片居中 */
+            background-repeat: no-repeat; /* 背景图片不重复 */
+            height: 100vh; /* 设置页面高度为视口高度 */
+            margin: 0; /* 去除默认的body边距 */
+            display: flex; /* 使用flex布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+        }
+        </style>
+</head>
+<body>
+    <div class="layui-container" style="margin-top: 30px;">
+        <div class="layui-card">
+            <div class="layui-card-header layui-bg-blue">编辑商品</div>
+            <div class="layui-card-body">
+                <form class="layui-form" asp-action="EditProduct" method="post" enctype="multipart/form-data">
+                    <input type="hidden" asp-for="Id" />
+
+                    <!-- 商品名称 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">商品名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" asp-for="Name" class="layui-input" lay-verify="required">
+                        </div>
+                    </div>
+
+                    <!-- 价格 -->
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">价格</label>
+                        <div class="layui-input-block">
+                            <input type="number" asp-for="Price" class="layui-input" step="0.01" lay-verify="required">
+                        </div>
+                    </div>
+
+                    <!-- 提交按钮 -->
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit>保存修改</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

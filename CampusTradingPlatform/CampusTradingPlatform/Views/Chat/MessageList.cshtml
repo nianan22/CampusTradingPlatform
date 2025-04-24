@@ -1,0 +1,25 @@
+﻿@using CTP.IService
+@using Entity
+@using Microsoft.EntityFrameworkCore
+@inject IUserInfoService _userService
+@model List<ChatRoom>
+@{
+    ViewData["Title"] = "消息列表";
+}
+
+<div class="layui-container">
+    <div class="layui-card">
+        <div class="layui-card-header">消息列表</div>
+        <div class="layui-card-body">
+            @foreach (var room in Model)
+            {
+                var counterpartId = room.BuyerId == ViewBag.UserId ? room.SellerId : room.BuyerId;
+                var counterpart = await _userService.LoadEntities(u => u.Id == counterpartId).FirstOrDefaultAsync();
+                <div class="layui-panel" onclick="window.location.href='/Chat/ChatRoom?roomId=@room.Id'">
+                    <div>@counterpart.UserName</div>
+                    <div>最后消息: @room.Messages.LastOrDefault()?.Content</div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,288 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="/js/form-serialize.js"></script> <!--这里需要引入form-serialize.js文件-->
+    <script src="/js/axios.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>注册</title>
+
+    <link href="/layui-main/dist/css/layui.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f4f9; /* 背景颜色 */
+            background-image: url('/images/bg.jpg'); /* 背景图片 */
+            background-size: cover; /* 背景图片覆盖整个页面 */
+            background-position: center; /* 背景图片居中 */
+            background-repeat: no-repeat; /* 背景图片不重复 */
+            height: 100vh; /* 设置页面高度为视口高度 */
+            margin: 0; /* 去除默认的body边距 */
+            display: flex; /* 使用flex布局 */
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+        }
+
+        .demo-reg-container {
+            width: 320px;
+            background-color: rgba(255, 255, 255, 0.9); /* 透明背景 */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+        }
+
+        .demo-reg-other .layui-icon {
+            position: relative;
+            display: inline-block;
+            margin: 0 2px;
+            top: 2px;
+            font-size: 26px;
+        }
+
+        .layui-form-item {
+            margin-bottom: 15px;
+        }
+
+            .layui-form-item:last-child {
+                margin-bottom: 0;
+            }
+
+        .layui-input-wrap {
+            position: relative;
+        }
+
+        .layui-input-prefix {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #999;
+        }
+
+        .layui-input {
+            padding-left: 35px; /* 为图标留出空间 */
+        }
+
+        .layui-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .layui-btn:hover {
+                background-color: #0056b3;
+            }
+
+        .layui-btn-primary {
+            background-color: #fff;
+            color: #007bff;
+            border: 1px solid #007bff;
+        }
+
+            .layui-btn-primary:hover {
+                background-color: #f0f8ff;
+            }
+
+        .demo-reg-other {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+            .demo-reg-other label {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .demo-reg-other a {
+                color: #007bff;
+                text-decoration: none;
+            }
+
+                .demo-reg-other a:hover {
+                    text-decoration: underline;
+                }
+
+        .layui-form-radio {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="layui-btn layui-btn-primary" style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 1000;" onclick="window.location.href='/home'">返回首页</button>
+
+    <form class="layui-form" id="regForm">
+        <div class="demo-reg-container">
+            <div class="layui-form-item">
+                <div class="layui-input-wrap">
+                    <div class="layui-input-prefix">
+                        <i class="layui-icon layui-icon-cellphone"></i>
+                    </div>
+                    <input type="text" name="cellphone" value="" lay-verify="required|phone" placeholder="手机号" lay-reqtext="请填写手机号" autocomplete="off" class="layui-input" id="reg-cellphone">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-row">
+                    <div class="layui-col-xs7">
+                        <div class="layui-input-wrap">
+                            <div class="layui-input-prefix">
+                                <i class="layui-icon layui-icon-email"></i>
+                            </div>
+                            <input type="text" name="email" value="" lay-verify="required|email" placeholder="邮箱" lay-reqtext="请填写邮箱" autocomplete="off" class="layui-input" id="reg-email">
+                        </div>
+                    </div>
+                    <div class="layui-col-xs5">
+                        <div style="margin-left: 11px;">
+                            <button type="button" class="layui-btn layui-btn-fluid layui-btn-primary" lay-on="reg-get-vercode" id="GetEmailCode">获取验证码</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-wrap">
+                    <div class="layui-input-prefix">
+                        <i class="layui-icon layui-icon-vercode"></i>
+                    </div>
+                    <input type="text" name="vercode" value="" lay-verify="required" placeholder="验证码" lay-reqtext="请填写验证码" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-wrap">
+                    <div class="layui-input-prefix">
+                        <i class="layui-icon layui-icon-password"></i>
+                    </div>
+                    <input type="password" name="password" value="" lay-verify="required" placeholder="密码" autocomplete="off" class="layui-input" id="reg-password" lay-affix="eye">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-wrap">
+                    <div class="layui-input-prefix">
+                        <i class="layui-icon layui-icon-password"></i>
+                    </div>
+                    <input type="password" name="confirmPassword" value="" lay-verify="required|confirmPassword" placeholder="确认密码" autocomplete="off" class="layui-input" lay-affix="eye">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-wrap">
+                    <div class="layui-input-prefix">
+                        <i class="layui-icon layui-icon-username"></i>
+                    </div>
+                    <input type="text" name="nickname" value="" lay-verify="required" placeholder="昵称" autocomplete="off" class="layui-input" lay-affix="clear">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-form-radio">
+                    <input type="radio" name="gender" value="0" title="男" checked>
+                </div>
+                <div class="layui-form-radio">
+                    <input type="radio" name="gender" value="1" title="女">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <input type="checkbox" name="agreement" lay-verify="required" lay-skin="primary" title="同意">
+                <a href="#terms" target="_blank" style="position: relative; top: 6px; left: -15px;">
+                    <ins>用户协议</ins>
+                </a>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="demo-reg">注册</button>
+            </div>
+            <div class="layui-form-item demo-reg-other">
+                <label>社交账号注册</label>
+                <span style="padding: 0 21px 0 6px;">
+                    <a href="javascript:;"><i class="layui-icon layui-icon-login-qq" style="color: #3492ed;"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-login-wechat" style="color: #4daf29;"></i></a>
+                    <a href="javascript:;"><i class="layui-icon layui-icon-login-weibo" style="color: #cf1900;"></i></a>
+                </span>
+                <a href="/Login">登录已有帐号</a>
+            </div>
+        </div>
+    </form>
+
+    <script src="/layui-main/dist/layui.js"></script>
+    <script>
+         
+        layui.use(function(){
+          var $ = layui.$;
+          var form = layui.form;
+          var layer = layui.layer;
+          var util = layui.util;
+          
+          // 自定义验证规则
+                  form.verify({
+                // 确认密码
+                confirmPassword: function(value, item){
+                    var passwordValue = $('#reg-password').val();
+                    if(value !== passwordValue){
+                        return '两次密码输入不一致';
+                    }
+                }
+            });
+
+            // 提交事件
+            form.on('submit(demo-reg)', function(data){
+    var field = data.field; // 获取表单字段值
+    var formData = new FormData(); // 创建 FormData 对象
+
+    // 将表单字段添加到 FormData 对象中
+    for (var key in field) {
+        formData.append(key, field[key]);
+    }
+
+    // 是否勾选同意
+    if(!field.agreement){
+        layer.msg('您必须勾选同意用户协议才能注册');
+        return false;
+    }
+
+    // 发送 POST 请求
+    axios.post('/Login/RegeistUser', formData, {
+        headers: {
+            'Content-Type': 'multipart/form-data' // 设置请求头
+        }
+    })
+    .then(function (response) {
+        layer.msg(response.data.message);
+        window.location.href="/login";
+    })
+    .catch(function (error) {
+        layer.msg('注册失败: ' + error.response.data.message);
+    });
+
+    return false; // 阻止默认 form 跳转
+});
+          util.on('lay-on', {
+             'reg-get-vercode': function(othis) {
+              var email = $('#reg-email').val().trim();
+               var isvalid = form.validate('#reg-email');
+                       if(!isvalid){
+                           return
+                       }
+                axios({
+            method: "get",
+            url: "/Login/EmailPost?email=" + encodeURIComponent(email), // 使用 email 参数名并编码
+        }).then(function ({ data: res }) {
+            if (res.code === 404) {
+                layer.msg(res.data);
+            } else if (res.code === 200) {
+                layer.msg('验证码已发送');
+                
+            } else {
+                layer.msg('邮件发送失败');
+            }
+        }).catch(function (error) {
+            layer.msg('请求失败: ' + error.message);
+        });
+    }
+});
+        });
+    </script>
+</body>
+</html>

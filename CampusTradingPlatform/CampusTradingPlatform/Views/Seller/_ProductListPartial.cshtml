@@ -1,0 +1,41 @@
+﻿@* Views/Seller/_ProductListPartial.cshtml *@
+@model IEnumerable<Entity.ProductInfo>
+
+<table class="layui-table">
+    <thead>
+        <tr>
+            <th>商品名称</th>
+            <th>价格</th>
+            <th>状态</th>
+            <th>创建时间</th>
+            <th>修改时间</th>
+            <th>操作</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.Name</td>
+                <td>@product.Price.ToString("C")</td>
+                <td>@product.Status</td>
+                <td>@product.CreateDate.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>@product.EditDate.ToString("yyyy-MM-dd HH:mm")</td>
+                <td>
+                    @if (product.Status == "上架")
+                    {
+                        <a href="/Seller/UnshelveProduct?productId=@product.Id" class="layui-btn layui-btn-xs layui-btn-danger">下架</a>
+                    }
+                    else
+                    {
+                        <a href="/Seller/ShelveProduct?productId=@product.Id" class="layui-btn layui-btn-xs">上架</a>
+                    }
+                    <a href="/Seller/EditProduct?productId=@product.Id" class="layui-btn layui-btn-xs layui-btn-normal">编辑</a>
+                    <!-- 新增详细按钮 -->
+                    <a href="/Seller/DetailProduct?productId=@product.Id" class="layui-btn layui-btn-xs layui-btn-warm">详细</a>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

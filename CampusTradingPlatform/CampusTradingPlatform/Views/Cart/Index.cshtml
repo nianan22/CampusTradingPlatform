@@ -1,0 +1,198 @@
+﻿@model Entity.Cart
+@{
+    var safeModel = Model ?? new Entity.Cart { Items = new List<Entity.CartItem>() };
+    ViewData["Title"] = "我的购物车";
+    Layout = null;
+}
+@{
+    ViewData["Title"] = "我的购物车";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>购物车 - 校园交易平台</title>
+    <link href="//unpkg.com/layui@2.9.21/dist/css/layui.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+
+        .cart-item {
+            background: #fff;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+        }
+
+        .item-header {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .item-body {
+            display: flex;
+            padding: 15px;
+        }
+
+        .product-image {
+            width: 120px;
+            height: 120px;
+            margin-right: 20px;
+        }
+
+        .product-info {
+            flex: 1;
+        }
+
+        .product-title {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            color: #ff5000;
+            font-size: 18px;
+        }
+
+        .quantity-box {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .quantity-input {
+            width: 50px;
+            height: 28px;
+            text-align: center;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+        }
+
+        .total-box {
+            margin-top: 20px;
+            padding: 20px;
+            background: #fff;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>我的购物车</h2>
+
+        <div id="cartList">
+            @if (safeModel.Items.Any())
+            {
+                @foreach (var item in safeModel.Items)
+                {
+                        <div class="cart-item">
+                            <div class="item-body">
+                                <a href="/product/DetailProduct?productId=@item.ProductId">
+                                    <img src="@item.Product.PhotoUrl" class="product-image">
+                                </a>
+                                <div class="product-info">
+                                    <a onclick="window.location.href='/product/DetailProduct?productId=@item.ProductId'" class="product-title">
+                                        @item.Product.Name
+                                    </a>
+                                    <div class="price">¥@item.Product.Price</div>
+                                    <div class="quantity-box">
+                                        <div class="quantity-btn" onclick="updateQuantity(@item.Id, -1)">-</div>
+                                        <input type="text" class="quantity-input" value="@item.Quantity"
+                                               id="quantity_@item.Id" onchange="updateQuantityInput(@item.Id)">
+                                        <div class="quantity-btn" onclick="updateQuantity(@item.Id, 1)">+</div>
+                                    </div>
+                                    <button class="layui-btn layui-btn-sm layui-btn-danger"
+                                            style="margin-top:10px;"
+                                            onclick="deleteItem(@item.Id)">
+                                        删除
+                                    </button>
+                                <button class="layui-btn layui-btn-sm"
+                                        onclick="window.location.href='/Chat/Start?productId=@item.Id'">
+                                    购买
+                                </button>
+                                </div>
+                            </div>
+                        </div>
+                    
+                }
+            }
+            else
+            {
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <div class="layui-empty">购物车空空如也，快去逛逛吧~</div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="total-box">
+            <span style="margin-right:20px;">总价：<span id="totalPrice">¥@Model.GetTotalPrice()</span></span>
+            <button class="layui-btn layui-btn-lg layui-btn-warm">去结算</button>
+        </div>
+    </div>
+
+    <script>
+        // 实时更新数量
+        async function updateQuantity(itemId, delta) {
+            const input = document.querySelector(`#quantity_${itemId}`);
+            const newVal = parseInt(input.value) + delta;
+            if(newVal < 1) return;
+            await doUpdate(itemId, newVal);
+        }
+
+        // 输入框修改
+        async function updateQuantityInput(itemId) {
+            const input = document.querySelector(`#quantity_${itemId}`);
+            await doUpdate(itemId, parseInt(input.value));
+        }
+
+        // 执行更新
+          async function doUpdate(itemId, newQuantity) {
+            try {
+                const response = await fetch(`/Cart/Update/${itemId}?quantity=${newQuantity}`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+
+                const result = await response.json();
+                if(result.success) {
+                    // 强制更新输入框数值
+                    const input = document.querySelector(`#quantity_${itemId}`);
+                    input.value = result.newQuantity; // 同步最新数值
+                    document.getElementById('totalPrice').textContent = `¥${result.total}`;
+                } else {
+                    alert(result.message);
+                }
+            } catch(e) {
+                alert('更新请求失败');
+            }
+        }
+
+
+        // 删除商品
+        async function deleteItem(itemId) {
+            if(confirm('确定删除吗？')) {
+                await fetch(`/Cart/Remove/${itemId}`, {method: 'POST'});
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>
