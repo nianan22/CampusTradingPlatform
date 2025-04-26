@@ -13,3 +13,4 @@ C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\Campus.IReposit
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\Campus.IRepository\obj\Debug\net8.0\refint\CTP.IRepository.dll
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\Campus.IRepository\obj\Debug\net8.0\CTP.IRepository.pdb
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\Campus.IRepository\obj\Debug\net8.0\ref\CTP.IRepository.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\Campus.IRepository\obj\Debug\net8.0\CTP.IRepository.sourcelink.json

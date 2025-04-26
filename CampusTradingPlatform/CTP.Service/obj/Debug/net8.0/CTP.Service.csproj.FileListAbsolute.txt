@@ -21,3 +21,4 @@ C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Service\obj
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Service\obj\Debug\net8.0\ref\CTP.Service.dll
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Service\bin\Debug\net8.0\Common.dll
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Service\bin\Debug\net8.0\Common.pdb
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Service\obj\Debug\net8.0\CTP.Service.sourcelink.json

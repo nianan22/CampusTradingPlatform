@@ -1,37 +1,221 @@
-﻿@using Entity
-@model List<ChatMessage>
-@{
-    ViewData["Title"] = "聊天室";
-}
+﻿<!DOCTYPE html>
+<html>
 
-<div class="layui-container">
-    <div class="layui-card">
-        <div class="layui-card-header">
-            <button class="layui-btn" onclick="history.back()">返回</button>
+<head>
+    <meta charset="utf-8">
+    <title>聊天界面</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="layui-main/src/css/layui.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+        }
+
+        /* 左侧联系人列表 */
+        .contact-list {
+            width: 300px;
+            height: 100%;
+            border-right: 1px solid #e6e6e6;
+            overflow-y: auto;
+        }
+
+        .contact-item {
+            padding: 10px;
+            border-bottom: 1px solid #e6e6e6;
+            cursor: pointer;
+        }
+
+            .contact-item:hover {
+                background-color: #f2f2f2;
+            }
+
+        /* 右侧聊天窗口 */
+        .chat-window {
+            flex: 1;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            data-current-userid ="-1";
+            data-current-username ="";
+        }
+
+        .chat-header {
+            height: 50px;
+            line-height: 50px;
+            padding: 0 10px;
+            border-bottom: 1px solid #e6e6e6;
+            font-weight: bold;
+        }
+
+        .chat-content {
+            flex: 1;
+            padding: 10px;
+            overflow-y: auto;
+        }
+
+        .chat-input {
+            height: 50px;
+            border-top: 1px solid #e6e6e6;
+            padding: 10px;
+            display: flex;
+        }
+
+            .chat-input input {
+                flex: 1;
+                height: 30px;
+                border: 1px solid #e6e6e6;
+                border-radius: 2px;
+                padding: 0 10px;
+            }
+
+            .chat-input button {
+                margin-left: 10px;
+            }
+
+        .message-item {
+            margin: 5px 0;
+            padding: 10px;
+        }
+
+        .message-self {
+            text-align: right;
+            background-color: #e8f6ff;
+        }
+
+        .message-other {
+            background-color: #ffffff;
+            border: 1px solid #e6e6e6;
+        }
+
+        .message-time {
+            font-size: 0.9em;
+            color: #666;
+            display: block;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 左侧联系人列表 -->
+    <div class="contact-list">
+        <div class="contact-item" data-userid="1001">联系人 1</div>
+        <div class="contact-item" data-userid="1002">联系人 2</div>
+        <div class="contact-item" data-userid="1003">联系人 3</div>
+    </div>
+
+    <!-- 右侧聊天窗口 -->
+    <div class="chat-window" data-current-userid="-1" data-current-username="">
+        <div class="chat-header">选择联系人开始聊天</div>
+        <div class="chat-content">
+            <!-- 聊天消息会动态添加到这里 -->
         </div>
-        <div class="layui-card-body">
-            <div id="chatMessages">
-                @foreach (var msg in Model)
-                {
-                    <div class="@(msg.SenderId == ViewBag.UserId ? "right" : "left")">
-                        <div>@msg.Content</div>
-                        <div>@msg.SentAt.ToString("HH:mm")</div>
-                    </div>
-                }
-            </div>
-            <input type="text" id="messageInput" />
-            <button onclick="sendMessage()">发送</button>
+        <div class="chat-input">
+            <input type="text" placeholder="输入消息">
+            <button class="layui-btn">发送</button>
         </div>
     </div>
-</div>
 
-<script>
-    function sendMessage() {
-        const input = document.getElementById('messageInput');
-        fetch('/Chat/SendMessage?roomId=@ViewBag.RoomId', {
-            method: 'POST',
-            body: JSON.stringify({ message: input.value }),
-            headers: { 'Content-Type': 'application/json' }
-        }).then(() => location.reload());
-    }
-</script>
+    <script src="layui-main/src/layui.js"></script>
+    <script>
+        layui.use(['layer', 'jquery'], function () {
+            var layer = layui.layer;
+            var $ = layui.jquery;
+            var chatWindow = $('.chat-window');
+
+            // 联系人点击事件（获取ID和名称）
+            $('.contact-item').on('click', function () {
+                var userId = $(this).data('userid');
+                var username = $(this).text();
+
+                // 更新聊天状态
+                chatWindow.data('current-userid', userId);
+                chatWindow.data('current-username', username);
+
+                // 更新聊天标题
+                $('.chat-header').text(`与 ${username} 聊天`);
+
+                // 模拟加载聊天记录（需替换为真实接口）
+                loadChatHistory(userId);
+            });
+
+            // 模拟加载聊天记录（需根据实际API调整）
+            function loadChatHistory(receiverId) {
+                var senderId = 1000; // 假设当前用户ID为1000（需从登录状态获取）
+                layer.msg(`加载与 ${receiverId} 的聊天记录`, { icon: 1 });
+
+                // 实际应用中应调用后端接口：
+                // $.ajax({
+                //     url: '/api/chat/history',
+                //     method: 'GET',
+                //     data: { senderId, receiverId },
+                //     success: function (messages) {
+                //         renderMessages(messages);
+                //     }
+                // });
+            }
+
+            // 消息发送事件（携带接收者ID）
+            $('.chat-input button').on('click', function () {
+                var input = $('.chat-input input');
+                var message = input.val();
+                var receiverId = chatWindow.data('current-userid');
+                var senderId = 1000; // 替换为实际登录用户ID
+
+                if (!receiverId || receiverId === '-1') {
+                    return layer.msg('请先选择聊天对象', { icon: 5 });
+                }
+
+                if (message) {
+                    // 构造消息对象（包含发送者和接收者信息）
+                    var messageObj = {
+                        senderId: senderId,
+                        receiverId: receiverId,
+                        content: message,
+                        sendTime: new Date().toLocaleString()
+                    };
+
+                    // 添加到聊天界面
+                    var messageHtml = createMessageElement(messageObj, 'self');
+                    $('.chat-content').append(messageHtml);
+
+                    // 模拟发送到服务器（需替换为真实接口）
+                    // $.ajax({
+                    //     url: '/api/chat/send',
+                    //     method: 'POST',
+                    //     data: messageObj,
+                    //     success: function (res) {
+                    //         layer.msg('消息发送成功', { icon: 1 });
+                    //     }
+                    // });
+
+                    input.val('');
+                    scrollToBottom();
+                }
+            });
+
+            // 创建消息元素（区分发送者和接收者）
+            function createMessageElement(msg, type) {
+                var cls = type === 'self' ? 'message-self' : 'message-other';
+                return `<div class="message-item ${cls}">
+                            <div class="message-sender">${type === 'self' ? '我' : msg.senderName}:</div>
+                            <div class="message-text">${msg.content}</div>
+                            <div class="message-time">${msg.sendTime}</div>
+                        </div>`;
+            }
+
+            // 滚动到底部
+            function scrollToBottom() {
+                $('.chat-content').scrollTop($('.chat-content')[0].scrollHeight);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -17,3 +17,4 @@ C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Repository\
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Repository\obj\Debug\net8.0\refint\CTP.Repository.dll
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Repository\obj\Debug\net8.0\CTP.Repository.pdb
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Repository\obj\Debug\net8.0\ref\CTP.Repository.dll
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CTP.Repository\obj\Debug\net8.0\CTP.Repository.sourcelink.json

@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8C281824-EE44-4F49-9133-F5EC60364131}|CTP.Service\\CTP.Service.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\ctp.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C281824-EE44-4F49-9133-F5EC60364131}|CTP.Service\\CTP.Service.csproj|solutionrelative:ctp.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campustradingplatform\\views\\chat\\chatroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|solutionrelative:campustradingplatform\\views\\chat\\chatroom.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B7AC4C0-F539-4579-81B0-7D2CA67B134A}|CTP.Repository\\CTP.Repository.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\ctp.repository\\chatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B7AC4C0-F539-4579-81B0-7D2CA67B134A}|CTP.Repository\\CTP.Repository.csproj|solutionrelative:ctp.repository\\chatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{28CBDAE6-B202-47B7-8E7C-3169E5A83C96}|Campus.IRepository\\CTP.IRepository.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campus.irepository\\ichatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{28CBDAE6-B202-47B7-8E7C-3169E5A83C96}|Campus.IRepository\\CTP.IRepository.csproj|solutionrelative:campus.irepository\\ichatmessagerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B7AC4C0-F539-4579-81B0-7D2CA67B134A}|CTP.Repository\\CTP.Repository.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\ctp.repository\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B7AC4C0-F539-4579-81B0-7D2CA67B134A}|CTP.Repository\\CTP.Repository.csproj|solutionrelative:ctp.repository\\cartrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campustradingplatform\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|solutionrelative:campustradingplatform\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campustradingplatform\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|solutionrelative:campustradingplatform\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campustradingplatform\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|solutionrelative:campustradingplatform\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C281824-EE44-4F49-9133-F5EC60364131}|CTP.Service\\CTP.Service.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\ctp.service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C281824-EE44-4F49-9133-F5EC60364131}|CTP.Service\\CTP.Service.csproj|solutionrelative:ctp.service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campustradingplatform\\controllers\\sellercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,20 +43,12 @@
       "RelativeMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|solutionrelative:campustradingplatform\\views\\seller\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campustradingplatform\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|solutionrelative:campustradingplatform\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8C281824-EE44-4F49-9133-F5EC60364131}|CTP.Service\\CTP.Service.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\ctp.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C281824-EE44-4F49-9133-F5EC60364131}|CTP.Service\\CTP.Service.csproj|solutionrelative:ctp.service\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campustradingplatform\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|solutionrelative:campustradingplatform\\views\\cart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\campustradingplatform\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DA3865FB-FE35-4744-8B51-79405DFE4A7C}|CampusTradingPlatform\\CampusTradingPlatform.csproj|solutionrelative:campustradingplatform\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8C281824-EE44-4F49-9133-F5EC60364131}|CTP.Service\\CTP.Service.csproj|c:\\users\\\u5FF5\u5B89\\desktop\\c#\u516D\u671F\u73ED\\campus\\campustradingplatform\\ctp.service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C281824-EE44-4F49-9133-F5EC60364131}|CTP.Service\\CTP.Service.csproj|solutionrelative:ctp.service\\cartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,41 +71,100 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ProductService.cs",
-              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Service\\ProductService.cs",
-              "RelativeDocumentMoniker": "CTP.Service\\ProductService.cs",
-              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Service\\ProductService.cs",
-              "RelativeToolTip": "CTP.Service\\ProductService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T05:50:53.702Z",
+              "Title": "ChatRoom.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Views\\Chat\\ChatRoom.cshtml",
+              "RelativeDocumentMoniker": "CampusTradingPlatform\\Views\\Chat\\ChatRoom.cshtml",
+              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Views\\Chat\\ChatRoom.cshtml",
+              "RelativeToolTip": "CampusTradingPlatform\\Views\\Chat\\ChatRoom.cshtml",
+              "ViewState": "AgIAAHAAAAAAAAAAAAAxwIkAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-26T04:36:50.651Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "SellerController.cs",
-              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Controllers\\SellerController.cs",
-              "RelativeDocumentMoniker": "CampusTradingPlatform\\Controllers\\SellerController.cs",
-              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Controllers\\SellerController.cs",
-              "RelativeToolTip": "CampusTradingPlatform\\Controllers\\SellerController.cs",
-              "ViewState": "AgIAAL4AAAAAAAAAAAAkwMkAAAAoAAAAAAAAAA==",
+              "Title": "ChatMessageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Repository\\ChatMessageRepository.cs",
+              "RelativeDocumentMoniker": "CTP.Repository\\ChatMessageRepository.cs",
+              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Repository\\ChatMessageRepository.cs",
+              "RelativeToolTip": "CTP.Repository\\ChatMessageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-24T05:49:07.471Z",
+              "WhenOpened": "2025-04-24T11:35:38.999Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "IChatMessageRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\Campus.IRepository\\IChatMessageRepository.cs",
+              "RelativeDocumentMoniker": "Campus.IRepository\\IChatMessageRepository.cs",
+              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\Campus.IRepository\\IChatMessageRepository.cs",
+              "RelativeToolTip": "Campus.IRepository\\IChatMessageRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T11:34:56.087Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartRepository.cs",
+              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Repository\\CartRepository.cs",
+              "RelativeDocumentMoniker": "CTP.Repository\\CartRepository.cs",
+              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Repository\\CartRepository.cs",
+              "RelativeToolTip": "CTP.Repository\\CartRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T11:34:19.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "CampusTradingPlatform\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "CampusTradingPlatform\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAACkAAAAAAAAAAAA1wDoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-24T11:27:31.909Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Service\\ProductService.cs",
+              "RelativeDocumentMoniker": "CTP.Service\\ProductService.cs",
+              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Service\\ProductService.cs",
+              "RelativeToolTip": "CTP.Service\\ProductService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T05:50:53.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SellerController.cs",
+              "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Controllers\\SellerController.cs",
+              "RelativeDocumentMoniker": "CampusTradingPlatform\\Controllers\\SellerController.cs",
+              "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Controllers\\SellerController.cs",
+              "RelativeToolTip": "CampusTradingPlatform\\Controllers\\SellerController.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAQwB4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-24T05:49:07.471Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Views\\Seller\\Index.cshtml",
               "RelativeDocumentMoniker": "CampusTradingPlatform\\Views\\Seller\\Index.cshtml",
               "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Views\\Seller\\Index.cshtml",
               "RelativeToolTip": "CampusTradingPlatform\\Views\\Seller\\Index.cshtml",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAAADUAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAADUAAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-24T05:47:41.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-24T05:47:41.915Z"
             },
             {
               "$type": "Document",
@@ -95,25 +174,25 @@
               "RelativeDocumentMoniker": "CampusTradingPlatform\\Controllers\\ChatController.cs",
               "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Controllers\\ChatController.cs",
               "RelativeToolTip": "CampusTradingPlatform\\Controllers\\ChatController.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABwAAAAAAAAAAAAYwCYAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T01:52:46.595Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "CartService.cs",
               "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Service\\CartService.cs",
               "RelativeDocumentMoniker": "CTP.Service\\CartService.cs",
               "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CTP.Service\\CartService.cs",
               "RelativeToolTip": "CTP.Service\\CartService.cs",
-              "ViewState": "AgIAAFwAAAAAAAAAAAAowGYAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAFwAAAAAAAAAAAA6wGYAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-07T01:25:27.855Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Views\\Cart\\Index.cshtml",
               "RelativeDocumentMoniker": "CampusTradingPlatform\\Views\\Cart\\Index.cshtml",
@@ -125,16 +204,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "CartController.cs",
               "DocumentMoniker": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "CampusTradingPlatform\\Controllers\\CartController.cs",
               "ToolTip": "C:\\Users\\\u5FF5\u5B89\\Desktop\\C#\u516D\u671F\u73ED\\Campus\\CampusTradingPlatform\\CampusTradingPlatform\\Controllers\\CartController.cs",
               "RelativeToolTip": "CampusTradingPlatform\\Controllers\\CartController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACQAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAABEAAAAAAAAAAAAkwCQAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-07T01:23:45.592Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-07T01:23:45.592Z"
             }
           ]
         }

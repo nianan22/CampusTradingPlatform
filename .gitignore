@@ -1,0 +1,20 @@
+# Visual Studio 生成文件
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+.vs/
+bin/
+obj/
+**/bin/
+**/obj/
+*.pdb
+*.dll
+*.exe
+*.cache
+*.vsidx
+*.sourcelink.json
+
+# 其他临时文件
+*.log
+*.tmp

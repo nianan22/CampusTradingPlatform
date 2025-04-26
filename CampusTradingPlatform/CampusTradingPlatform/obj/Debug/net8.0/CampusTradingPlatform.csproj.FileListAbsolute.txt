@@ -195,3 +195,4 @@ C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CampusTradingPl
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CampusTradingPlatform\bin\Debug\net8.0\CTP.IService.pdb
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CampusTradingPlatform\bin\Debug\net8.0\CTP.Repository.pdb
 C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CampusTradingPlatform\bin\Debug\net8.0\CTP.Service.pdb
+C:\Users\念安\Desktop\C#六期班\Campus\CampusTradingPlatform\CampusTradingPlatform\obj\Debug\net8.0\CampusTradingPlatform.sourcelink.json
